@@ -1,0 +1,69 @@
+<script>
+
+const playerSelection = prompt("Rock, Paper or Scissor?")
+const computerSelection = getComputerChoice()
+const winner = playRound()
+const score = showScore()
+
+
+function getComputerChoice(){
+
+    const random = Math.random();
+    if (random <0.34){
+        return 'rock';
+    } else if (random <0.67){
+        return 'paper';
+    } else {return 'scissor';}
+}
+
+
+
+
+function playRound(playerSelection, computerSelection){
+    
+     if (playerSelection === 'rock'){
+        if(computerSelection === 'paper'){
+            return 'lose';
+        } else {
+            return 'win';
+        }
+    } else if(playerSelection === 'paper'){
+        if(computerSelection === 'scissor'){
+            return 'lose';
+        } else {
+            return 'win';
+        }
+    } else if (playerSelection === 'scissor'){
+        if(computerSelection === 'rock'){
+            return 'lose';
+        } else {
+            return 'win'; 
+        }
+    } else if (playerSelection === computerSelection){
+        return 'draw';
+   
+    }
+}
+
+
+
+function showScore(winner){
+
+let pScore = 0
+let cScore = 0
+
+    if (winner === 'win'){
+        pScore + 1;
+    } else (winner === 'lose'); {
+        cScore + 1;
+    }
+}
+
+
+
+console.log(playerSelection, computerSelection, playRound(playerSelection, computerSelection), score)
+
+
+
+
+</script>
